@@ -27,24 +27,54 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  return cb(arr);
 }
+
+getLength(items, function(array) {
+  console.log(array.length);
+})
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb(arr);
 }
+
+last(items, function(array) {
+  console.log(array[array.length-1]);
+})
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+return cb(x +y);
 }
+
+sumNums(1, 2, function(result){
+  console.log(result);
+})
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x * y);
 }
+multiplyNums(3, 4, function(result){
+  console.log(result);
+})
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  if (list.includes(item)) {
+    return cb(true);
+  } else {
+    return cb(false);
+  }
 }
+
+function itemInList(variable) {
+  console.log(variable);
+}
+
+contains('dice', items, itemInList)
 
 /* STRETCH PROBLEM */
 
